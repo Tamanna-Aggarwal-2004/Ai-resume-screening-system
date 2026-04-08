@@ -43,11 +43,12 @@ try:
     nltk.data.find('tokenizers/punkt')
 except:
     nltk.download('punkt')
-
+    nltk.download('punkt_tab')
 try:
     nltk.data.find('corpora/stopwords')
 except:
     nltk.download('stopwords')
+
 
 # -----------------------------
 # Cache model (VERY IMPORTANT 🔥)
