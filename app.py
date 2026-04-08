@@ -92,7 +92,7 @@ def clean_text(text):
 # -----------------------------
 def extract_keywords(text, top_n=20):
     stop_words = set(stopwords.words('english'))
-    words = word_tokenize(text)
+    words = text.split()
     words = [w for w in words if w not in stop_words and len(w) > 2]
     freq = Counter(words)
     return set([word for word, _ in freq.most_common(top_n)])
