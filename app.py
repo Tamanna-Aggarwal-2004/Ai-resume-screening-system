@@ -43,12 +43,11 @@ try:
     nltk.data.find('tokenizers/punkt')
 except:
     nltk.download('punkt')
-    nltk.download('punkt_tab')
+
 try:
     nltk.data.find('corpora/stopwords')
 except:
     nltk.download('stopwords')
-
 
 # -----------------------------
 # Cache model (VERY IMPORTANT 🔥)
@@ -92,7 +91,7 @@ def clean_text(text):
 # -----------------------------
 def extract_keywords(text, top_n=20):
     stop_words = set(stopwords.words('english'))
-    words = text.split()
+    words = word_tokenize(text)
     words = [w for w in words if w not in stop_words and len(w) > 2]
     freq = Counter(words)
     return set([word for word, _ in freq.most_common(top_n)])
@@ -218,8 +217,72 @@ if st.button("🔍 Analyze Match"):
                     st.success("Strong Match ✅")
 
                 # keywords
-                st.subheader("✅ Matching Keywords")
-                st.write(common if common else "None")
+                # keywords
+                def render_keywords(words, color, bg):
+                    if not words:
+                        return "<span style='color:#888;font-style:italic;'>None found</span>"
+                    return "".join([
+                        f"<span style='"
+                        f"display:inline-block;"
+                        f"background:{bg};"
+                        f"color:{color};"
+                        f"border-radius:5px;"
+                        f"padding:6px 14px;"
+                        f"margin:4px 5px;"
+                        # f"font-size:14px;"
+                        # f"font-weight:600;"
+                        # f"letter-spacing:0.3px;"
+                        f"'>{w}</span>"
+                        for w in words
+                    ])
 
-                st.subheader("❌ Missing Keywords")
-                st.write(missing if missing else "None")
+                # keywords
+                # keywords
+                def render_keywords(words, color, bg, border):
+                    if not words:
+                        return "<span style='color:#888;font-style:italic;'>None found</span>"
+                    return "".join([
+                        f"<span style='"
+                        f"display:inline-block;"
+                        f"background:{bg};"
+                        f"color:{color};"
+                        f"border:1px solid {border};"
+                        f"border-radius:6px;"
+                        f"padding:6px 14px;"
+                        f"margin:4px 5px;"
+                        # f"font-size:13px;"
+                        f"'>{w}</span>"
+                        for w in words
+                    ])
+
+                st.markdown(f"""
+                <div style="
+                    background:#0b1e2d;
+                    border:1.5px solid #1f4a5c;
+                    border-radius:14px;
+                    padding:18px 20px;
+                    margin-bottom:18px;
+                ">
+                    <div style="font-size:16px;font-weight:700;color:#7fdfff;margin-bottom:10px;">
+                        ✅ Matching Keywords
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;">
+                        {render_keywords(common, '#7fdfff', "#0f2a3d", '#1f4a5c')}
+                    </div>
+                </div>
+
+                <div style="
+                    background:#2a1a05;
+                    border:1.5px solid #5a3a00;
+                    border-radius:14px;
+                    padding:18px 20px;
+                    margin-bottom:18px;
+                ">
+                    <div style="font-size:16px;font-weight:700;color:#ffcc66;margin-bottom:10px;">
+                        ❌ Missing Keywords
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;">
+                        {render_keywords(missing, '#ffcc66', '#3a2600', '#5a3a00')}
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
