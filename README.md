@@ -6,7 +6,7 @@ An intelligent resume screening system that uses **Natural Language Processing (
 
 ## 🚀 Live Demo
 
-🔗 [View Live Demo]([YOUR_LIVE_LINK_HERE](https://ai-resume-screening-system-abcd.streamlit.app/))
+🔗 [View Live Demo](https://ai-resume-screening-system-abcd.streamlit.app/)
 
 ---
 
@@ -14,12 +14,12 @@ An intelligent resume screening system that uses **Natural Language Processing (
 
 * 📄 Resume parsing and text extraction
 * 🧠 NLP-based analysis of resumes
-* 🎯 Job-description matching using ML
+* 🎯 Job-description matching using Machine Learning
 * 🔍 TF-IDF vectorization for feature extraction
 * 🤝 Cosine similarity for accurate matching
 * 📊 Match score generation (percentage)
 * 📌 Highlights missing skills in resumes
-* ⚡ Fast and real-time predictions
+* ⚡ Fast and real-time predictions using Streamlit
 
 ---
 
@@ -32,10 +32,9 @@ An intelligent resume screening system that uses **Natural Language Processing (
 * TF-IDF Vectorizer
 * Cosine Similarity
 
-### Backend / Interface
+### Interface
 
-* Streamlit (for interactive UI)
-* FastAPI *(optional if used)*
+* Streamlit
 
 ### Data Processing
 
@@ -46,7 +45,7 @@ An intelligent resume screening system that uses **Natural Language Processing (
 
 ## ⚙️ How It Works
 
-1. User uploads a resume and provides a job description
+1. User uploads a resume and enters a job description
 2. Text is cleaned and preprocessed using NLP techniques
 3. TF-IDF converts text into numerical vectors
 4. Cosine similarity is computed between resume and job description
@@ -60,15 +59,14 @@ An intelligent resume screening system that uses **Natural Language Processing (
 
 ## 📂 Project Structure
 
-```id="nqk9c2"
+```bash
 AI-Resume-Screening-System/
-├── app.py                 # Streamlit UI  
-├── main.py                # Backend logic (if FastAPI used)  
-├── model.pkl              # Trained model  
-├── tfidf.pkl              # TF-IDF vectorizer  
-├── data/                  # Dataset  
-├── utils/                 # Helper functions  
-├── requirements.txt       # Dependencies  
+├── app.py              # Streamlit application  
+├── model.pkl           # Trained ML model  
+├── tfidf.pkl           # TF-IDF vectorizer  
+├── data/               # Dataset  
+├── utils/              # Helper functions  
+├── requirements.txt    # Dependencies  
 └── README.md  
 ```
 
@@ -78,8 +76,8 @@ AI-Resume-Screening-System/
 
 ### 1️⃣ Clone the repository
 
-```bash id="xmxapd"
-git clone YOUR_GITHUB_REPO_LINK
+```bash
+git clone https://github.com/Tamanna-Aggarwal-2004/AI-Resume-Screening-System
 cd AI-Resume-Screening-System
 ```
 
@@ -87,7 +85,7 @@ cd AI-Resume-Screening-System
 
 ### 2️⃣ Install dependencies
 
-```bash id="n9o3y1"
+```bash
 pip install -r requirements.txt
 ```
 
@@ -95,27 +93,18 @@ pip install -r requirements.txt
 
 ### 3️⃣ Run the application
 
-#### If using Streamlit
-
-```bash id="ckl1m4"
+```bash
 streamlit run app.py
-```
-
-#### If using FastAPI
-
-```bash id="d7k2xq"
-uvicorn main:app --reload
 ```
 
 ---
 
 ## 📈 Future Enhancements
 
-* 📊 Add ranking system for multiple resumes
-* 🤖 Use deep learning models (BERT, transformers)
-* 🌐 Deploy full-stack version
-* 📂 Support multiple file formats (PDF, DOCX)
-* 🧠 Improve skill extraction accuracy
+* 📊 Ranking system for multiple resumes
+* 🤖 Advanced NLP models (BERT, Transformers)
+* 📂 Support for PDF and DOCX parsing
+* 🧠 Improved skill extraction
 
 ---
 
@@ -135,9 +124,10 @@ MIT License
 
 👩‍💻 **Tamanna Aggarwal**
 
-🔗 GitHub: [GITHUB](https://github.com/Tamanna-Aggarwal-2004)
-🔗 LinkedIn: [LINKEDIN](https://www.linkedin.com/in/tamanna-aggarwal-4a1102327/)
-🌐 Portfolio: [PORTFOLIO](https://my-portfolio-zeta-cyan-gj6dgnmro9.vercel.app/)
+🔗 GitHub: https://github.com/Tamanna-Aggarwal-2004
+🔗 LinkedIn: https://www.linkedin.com/in/tamanna-aggarwal-4a1102327/
+🌐 Portfolio: https://my-portfolio-zeta-cyan-gj6dgnmro9.vercel.app/
+
 ---
 
 ✨ *Making hiring smarter with AI-powered resume analysis*
