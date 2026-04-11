@@ -229,6 +229,7 @@ if st.button("🔍 Analyze Match"):
                         f"border-radius:5px;"
                         f"padding:6px 14px;"
                         f"margin:4px 5px;"
+                        f"font-size: 20px;"
                         # f"font-size:14px;"
                         # f"font-weight:600;"
                         # f"letter-spacing:0.3px;"
@@ -250,7 +251,6 @@ if st.button("🔍 Analyze Match"):
                         f"border-radius:6px;"
                         f"padding:6px 14px;"
                         f"margin:4px 5px;"
-                        # f"font-size:13px;"
                         f"'>{w}</span>"
                         for w in words
                     ])
@@ -258,31 +258,31 @@ if st.button("🔍 Analyze Match"):
                 st.markdown(f"""
                 <div style="
                     background:#0b1e2d;
-                    border:1.5px solid #1f4a5c;
+                    border:1.5px solid #042534;
                     border-radius:14px;
                     padding:18px 20px;
                     margin-bottom:18px;
                 ">
-                    <div style="font-size:16px;font-weight:700;color:#7fdfff;margin-bottom:10px;">
+                    <div style="font-size:16px;font-weight:500;color:#7fdfff;margin-bottom:10px;">
                         ✅ Matching Keywords
                     </div>
                     <div style="display:flex;flex-wrap:wrap;">
-                        {render_keywords(common, '#7fdfff', "#0f2a3d", '#1f4a5c')}
+                        {render_keywords(common, '#7fdfff', "#0f2a3d", "#042534")}
                     </div>
                 </div>
 
                 <div style="
                     background:#2a1a05;
-                    border:1.5px solid #5a3a00;
+                    border:1.5px solid #2c1e04;
                     border-radius:14px;
                     padding:18px 20px;
                     margin-bottom:18px;
                 ">
-                    <div style="font-size:16px;font-weight:700;color:#ffcc66;margin-bottom:10px;">
+                    <div style="font-size:16px;font-weight:500;color:#ffcc66;margin-bottom:10px;">
                         ❌ Missing Keywords
                     </div>
                     <div style="display:flex;flex-wrap:wrap;">
-                        {render_keywords(missing, '#ffcc66', '#3a2600', '#5a3a00')}
+                        {render_keywords(missing, '#ffcc66', '#3a2600', "#2c1e04")}
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
